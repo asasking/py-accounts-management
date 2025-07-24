@@ -1,17 +1,17 @@
 
 
-
 '''class DjangoAccountsManagementConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'django_accounts_management'
 '''
 
 
-
 # account_levels/apps.py
 from django.apps import AppConfig
 from django.conf import settings
-from .exceptions import AccountLevelsConfigurationError # Your custom exception
+from .exceptions import AccountLevelsConfigurationError 
+# Your custom exception
+
 
 class DjangoAccountsManagementConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
@@ -30,7 +30,8 @@ class DjangoAccountsManagementConfig(AppConfig):
 
         # 2. Import and connect signals
         # We import here to avoid circular import issues during Django's startup process
-        import django_accounts_management.signals
+        import django_accounts_management.signals  
+        
 
     def validate_settings(self):
         """
