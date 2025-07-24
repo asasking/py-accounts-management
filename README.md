@@ -93,3 +93,35 @@ ACCOUNT_LEVELS_PROFILE_MISSING_REDIRECT_URL = 'home'
 LOGIN_URL = '/login/' # Your project's login URL
 LOGIN_REDIRECT_URL = '/' # Where to redirect after successful login
 LOGOUT_REDIRECT_URL = '/' # Where to redirect after logout
+
+# using the decorator
+
+# import the decorator in your views.py
+
+'''
+from django.contrib.auth.decorators import login_required
+from django_accounts_management.decorators import account_level_required, group_required
+
+@login_required
+@group_required('consumers', redirect_url='EluxProcessor:buy_elux')
+@account_level_required('Basic', redirect_url='EluxProcessor:buy_elux')
+
+def test_view(request):
+    """
+    A simple view to test the setup.
+    """
+    return HttpResponse("This is a test view to ensure the Django setup is working correctly.")
+# Create your views here.
+
+
+'''
+
+# or the group decolators can be used as the list of groups if you need to set the view appropriate to more than one view
+
+# @group_required(['consumers', 'sme', ], redirect_url='EluxProcessor:buy_elux')
+
+'''
+
+the decorators for the account level and group are independent on each other, can be used separately to match the context of yor demand
+
+'''
