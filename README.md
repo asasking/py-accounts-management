@@ -54,7 +54,7 @@ an account level based view can be acccessed bhy various users of the same accou
 
     INSTALLED_APPS = [
         # ... other Django apps
-        'django-accounts-management',
+        'django_accounts_management',
         # ... your project's apps
     ]
     ```
